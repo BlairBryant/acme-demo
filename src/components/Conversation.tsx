@@ -15,6 +15,11 @@ const Conversation: React.FC<Props> = (props) => {
     // This is a work around to handle the UI to change when the star is clicked to flag the message.
     const [isFavorite, setIsFavorite] = useState<Boolean>(contact.isFavorite)
 
+    const toggleStar = (e: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
+        e.stopPropagation();
+        setIsFavorite(prevValue => !prevValue)
+    }
+
     return (
         <div className="conversation">
             <div className="profile-picture"></div>
@@ -27,9 +32,9 @@ const Conversation: React.FC<Props> = (props) => {
                 {
                     isFavorite
                         ?
-                        <img src={starIcon} alt="Favorite Star" onClick={() => setIsFavorite(prevValue => !prevValue)}/>
+                        <img src={starIcon} alt="Favorite Star" onClick={toggleStar}/>
                         :
-                        <img src={emptyStarIcon} alt="Not Favorite Star" onClick={() => setIsFavorite(prevValue => !prevValue)}/>
+                        <img src={emptyStarIcon} alt="Not Favorite Star" onClick={toggleStar}/>
                 }
             </div>
         </div>

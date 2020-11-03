@@ -39,8 +39,12 @@ const ConversationsBar: React.FC = () => {
         }
     }
 
+    const openConversation = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        console.log(e.target);
+    }
+
     return (
-        <div className="conversations-bar">
+        <div className="conversations-bar" onClick={openConversation}>
             <div className="conversations-bar__top">
                 <div className="row justify-between">
                     <form onSubmit={submitSearch}>
