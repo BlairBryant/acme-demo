@@ -6,9 +6,15 @@ import data from '../data/MOCK_DATA.json';
 import Conversation from './Conversation';
 import { Contact } from '../interfaces/Contact';
 
-const ConversationsBar: React.FC = () => {
+interface Props {
+    setConversationActive: (conversation: Contact) => void;
+}
+
+const ConversationsBar: React.FC<Props> = ({setConversationActive}) => {
     const [search, setSearch] = useState<String>("");
-    const [contactList, setContactList] = useState<Array<Contact>>(data)
+    const [contactList, setContactList] = useState<Contact[]>(data)
+
+    //Would normally set contactList using useEffect() hook with an http.get request.
 
     const submitSearch = (e: FormEvent) => {
         e.preventDefault();
@@ -17,7 +23,7 @@ const ConversationsBar: React.FC = () => {
             // A partial search such as 'kir' would find contacts such as 'Kirby', 'Kirsten', and 'Al Kirkbride'.
             // Would use Regular Expressions to handle more complex search functionality on the frontend, 
             // but usually filtering is done on the backend so the below would normally be an AJAX request passing the search value to the backend.
-            const filteredSearchResults = contactList.filter(contact => {
+            const filteredSearchResults: Contact[] = contactList.filter(contact => {
                 const fullName = `${contact.firstName} ${contact.lastName}`;
                 return fullName.toLowerCase().includes(search.toLowerCase());
             })
@@ -34,17 +40,13 @@ const ConversationsBar: React.FC = () => {
         if (e.target.value === "all") {
             setContactList(data);
         } else if (e.target.value === "favorite") {
-            const filteredByIsFavorite = data.filter(contact => contact.isFavorite);
+            const filteredByIsFavorite: Contact[] = data.filter(contact => contact.isFavorite);
             setContactList(filteredByIsFavorite);
         }
     }
 
-    const openConversation = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-        console.log(e.target);
-    }
-
     return (
-        <div className="conversations-bar" onClick={openConversation}>
+        <div className="conversations-bar">
             <div className="conversations-bar__top">
                 <div className="row justify-between">
                     <form onSubmit={submitSearch}>
@@ -68,7 +70,7 @@ const ConversationsBar: React.FC = () => {
                     is out of the scope of what needs to be provided. */}
                     <select className="filter-conversations" onChange={filterConversations}>
                         <option value="all">All conversations</option>
-                        <option value="favorite">Favorited conversations</option>
+                        <option value="favorite">Favorites</option>
                     </select>
                     <button className="btn--follow-up">Follow Up</button>
                 </div>
@@ -76,7 +78,7 @@ const ConversationsBar: React.FC = () => {
             <div className="conversations-container">
                 {
                     contactList.map((chat, i) => {
-                        return <Conversation key={chat.id} contact={chat} />
+                        return <Conversation key={chat.id} contact={chat} setConversationActive={setConversationActive}/>
                     })
                 }
             </div>

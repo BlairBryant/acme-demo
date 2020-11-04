@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "sender_id": 1,
+        "reciever_id": 0,
+        "message": "Nice to meet you Acme representative",
+        "order": 1
+    },
+    {
+        "id": 2,
+        "sender_id": 0,
+        "reciever_id": 1,
+        "message": "Hi Kirby, thank you for the message",
+        "order": 2
+    },
+    {
+        "id": 3,
+        "sender_id": 1,
+        "reciever_id": 0,
+        "message": "So you help set up communications for small medical firms?",
+        "order": 3
+    },
+    {
+        "id": 4,
+        "sender_id": 1,
+        "reciever_id": 0,
+        "message": "What does it entail?",
+        "order": 4
+    },
+    {
+        "id": 5,
+        "sender_id": 0,
+        "reciever_id": 1,
+        "message": "Yes we have a proprietary web application that makes communication smoother for clients.",
+        "order": 5
+    }
+]

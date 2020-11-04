@@ -1,0 +1,120 @@
+.display-conversation {
+    width: 100%;
+    min-height: 100vh;
+    padding-left: 350px;
+    background: #f7f8ff;
+}
+
+.display-conversation--empty {
+    width: 100%;
+    height: 100vh;
+    padding-left: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #f7f8ff;
+}
+
+.display-conversation__header {
+    width: 100%;
+    height: 40px;
+    padding-left: 20px;
+    border-bottom: 1px solid #ddd;
+    background: #f2f6fa;
+    position: relative;
+    z-index: 1;
+    align-items: center;
+}
+
+.display-conversation__header .profile-picture {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+}
+
+.display-conversation__header h3 {
+    padding-left: 10px;
+    font-size: 14px;
+}
+
+.display-conversation__body {
+    width: 100%;
+    height: 85vh;
+    padding: 20px 320px 0px 20px;
+    position: relative;
+    overflow-y: auto;
+}
+
+.message__container {
+    clear: both;
+}
+
+.message {
+    max-width: 60%;
+    margin-bottom: 16px;
+    padding: 12px;
+    background: #eee;
+    border-radius: 12px;
+    display: block;
+    float: left;
+    clear: both;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.message--right {
+    float: right;
+    background: #c6dcf1;
+}
+
+.display-conversation__body .profile-picture {
+    width: 25px;
+    height: 25px;
+    font-size: 11px;
+    margin-bottom: 4px;
+}
+
+.display-conversation__body .profile-picture--right {
+    float: right;
+    background: #c6dcf1;
+}
+
+.display-conversation__footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding-bottom: 20px;
+    padding-right: 300px;
+}
+
+.display-conversation__footer form {
+    padding-right: 370px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.display-conversation__footer input {
+    width: 340px;
+    height: 28px;
+    border-radius: 8px;
+    padding-left: 10px;
+    border: 2px solid #666;
+}
+
+.no-active-conversation {
+    text-align: center;
+}
+
+.no-active-conversation h2 {
+    font-size: 28px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.no-active-conversation p {
+    max-width: 300px;
+    color: #555;
+    line-height: 20px;
+}

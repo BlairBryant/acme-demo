@@ -1,0 +1,37 @@
+.edit-contact-bar {
+    width: 300px;
+    height: 100%;
+    background: #f2f6fa;
+    position: fixed;
+    border-left: 1px solid #ddd;
+    box-shadow: 2px 0px 8px #ddd;
+    top: 0;
+    right: 0;
+    text-align: center;
+}
+
+.edit-contact-bar .profile-picture {
+    width: 100px;
+    height: 100px;
+    margin-top: 100px;
+    font-size: 22px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.edit-contact-bar h3 {
+    padding-top: 20px;
+    font-size: 22px;
+}
+
+.edit-contact-bar h4 {
+    padding-top: 4px;
+    padding-bottom: 32px;
+    font-size: 18px;
+    color: #555;
+}
+
+.edit-contact-bar span {
+    font-size: 16px;
+}

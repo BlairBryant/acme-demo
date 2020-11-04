@@ -10,5 +10,5 @@ Run the command 'npm start'
 If Node and or npm are not installed on your computer, install them from here: https://www.npmjs.com/get-npm
 
 ## Additional Features
-- Search functionality that can handle partial pieces of a name instead of requiring an exact match.
+- Search functionality that can handle partial pieces of a name instead of requiring an exact match
 - Filtering conversations based on whether or not they are flagged
